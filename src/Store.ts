@@ -6,8 +6,6 @@ export class Store {
 
   private subscribers: Set<Listener>;
 
-  defaultState = { ss: 1 };
-
   public constructor(initialState?: State, reducer?: Reducer) {
     this.reducer = reducer ?? {};
     this.state = initialState ?? {};
@@ -21,9 +19,7 @@ export class Store {
    */
   dispatch(action: Action): void {
     this.state = this.reduce(this.state, action);
-
     this.subscribers.forEach((fn) => fn(this.state));
-
     return undefined;
   }
 
@@ -42,12 +38,7 @@ export class Store {
    */
   subscribe(listener: Listener): Function {
     this.subscribers.add(listener);
-
-    console.log('subs count', this.subscribers.size);
-
-    console.log('subs:', JSON.stringify(this.subscribers));
     return () => {
-      console.log('uns:', JSON.stringify(this.subscribers));
       this.subscribers.delete(listener);
     };
   }
@@ -57,13 +48,9 @@ export class Store {
   }
 
   private reduce(state: State, action: Action): State {
-    console.log('called');
-
     const newState: State = {};
-    console.log(JSON.stringify(this.reducer));
 
     for (const funcName in this.reducer) {
-      console.log('called 2');
       newState[funcName] = this.reducer[funcName](state, action);
     }
 
