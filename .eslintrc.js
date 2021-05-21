@@ -16,6 +16,7 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/ban-types': [
       'error',
       {
