@@ -1,41 +1,28 @@
-import applyMiddleware from "./applyMiddleware";
-import {State} from "./types";
+import applyMiddleware from './applyMiddleware';
+import { State } from './types';
 
+describe('applyMiddleware must be function', () => {
+  test('function type', () => {
+    expect(applyMiddleware).toBeInstanceOf(Function);
+    expect(applyMiddleware(jest.fn(), jest.fn())).toBeInstanceOf(Function);
+  });
 
-describe( "applyMiddleware must be function", () => {
+  test(' test created function', () => {
+    const reducer = jest.fn();
+    const state: State = {};
 
+    const middlewareFuncOne = jest.fn().mockReturnValue(jest.fn());
+    const middlewareFuncTwo = jest.fn().mockReturnValue(jest.fn());
 
-    test("function type" , () => {
-        expect(applyMiddleware).toBeInstanceOf(Function)
-        expect(applyMiddleware(jest.fn(), jest.fn())).toBeInstanceOf(Function)
-    })
+    const createStore = applyMiddleware(middlewareFuncOne, middlewareFuncTwo);
+    const storeCreator = jest.fn().mockReturnValue({
+      dispatch: jest.fn(),
+    });
 
-
-    test(" test created function" , () => {
-
-        let createStore = applyMiddleware(jest.fn(), jest.fn());
-
-        let reducer = jest.fn();
-        let state: State = {
-
-        };
-
-        let storeCreator = jest.fn().mockReturnValue(
-            {
-                dispatch: jest.fn()
-            }
-        )
-
-        console.log( '*',createStore.toString())
-       let store =  createStore(storeCreator);
-        console.log("****************\n", JSON.stringify(store.toString() ))
-
-        expect(1).toEqual(1);
-
-
-
-
-    })
-
-
-})
+    const store = createStore(storeCreator);
+    store(reducer, state, jest.fn());
+    expect(middlewareFuncOne).toBeCalledTimes(1);
+    expect(middlewareFuncTwo).toBeCalledTimes(1);
+    expect(1).toEqual(1);
+  });
+});

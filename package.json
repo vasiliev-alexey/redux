@@ -1,12 +1,12 @@
 {
-  "name": "otus_redux",
+  "name": "@vasiliev-alexey/otus_redux",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "/dist/index.js",
   "private": true,
   "homepage": "https://vasiliev-alexey.github.io/",
   "scripts": {
     "test": "jest --coverage",
+    "build": "tsc -b",
     "lint": "prettier --check . && eslint ./src --ext .js,.ts && tsc --noEmit",
     "lint:fix": "prettier --write . && eslint . --fix --ext .js,.ts && tsc --noEmit",
     "prepare": "husky install"
@@ -35,14 +35,23 @@
     "lint-staged": "^11.0.0",
     "prettier": "2.3.0",
     "ts-jest": "^26.5.4",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
     "*.{js,ts,md}": "prettier --write"
   },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0"
-  }
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasiliev-alexey/redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vasiliev-alexey/redux/issues"
+  },
+  "description": "My implementation react  redux"
 }

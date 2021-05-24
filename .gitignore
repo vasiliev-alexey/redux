@@ -6,3 +6,5 @@ dist/
 .eslintcache
 doc/Заметки.md
 /coverage
+
+/dist

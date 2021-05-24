@@ -1,0 +1,15 @@
+/node_modules
+/src
+jest.config.js
+tsconfig.json
+/.github
+/.idea
+/doc
+/coverage
+
+.eslintignore
+.eslintrc.js
+.prettierignore
+
+babel.config.js
+prettier.config.js
