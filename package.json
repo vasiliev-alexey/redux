@@ -2,6 +2,7 @@
   "name": "@vasiliev-alexey/otus_redux",
   "version": "1.0.0",
   "main": "/dist/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "homepage": "https://vasiliev-alexey.github.io/",
   "scripts": {
