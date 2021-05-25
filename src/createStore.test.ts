@@ -1,5 +1,5 @@
 import { createStore, Enhancer } from './createStore';
-import { State, Reducer } from './types';
+import { State, Reducer, Action } from './types';
 import { Store } from './Store';
 
 describe('test create store', () => {
@@ -11,7 +11,7 @@ describe('test create store', () => {
     const preState: State = {
       name: 'name',
     };
-    const reducer: Reducer = {};
+    const reducer: Reducer<State> = jest.fn().mockReturnValue(preState);
 
     const store = createStore(reducer, preState);
     expect(store).toBeInstanceOf(Store);
@@ -21,7 +21,7 @@ describe('test create store', () => {
     const preState: State = {
       name: 'name',
     };
-    const reducer: Reducer = {};
+    const reducer: Reducer<State> = jest.fn();
 
     const midlewareMock = jest.fn();
 
