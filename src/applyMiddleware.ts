@@ -2,7 +2,7 @@
 import { Store } from './Store';
 import { Action, Reducer, State } from './types';
 
-export  function applyMiddleware(...middlewares: Function[]): Function {
+export function applyMiddleware(...middlewares: Function[]): Function {
   return (createStore: Function) =>
     (reducer: Reducer<State>, preloadedState: State, enhancer: Function[]) => {
       const store: Store = createStore(reducer, preloadedState, enhancer);
