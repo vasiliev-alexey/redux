@@ -1,4 +1,4 @@
-import applyMiddleware from './applyMiddleware';
+import {applyMiddleware} from './applyMiddleware';
 import { State } from './types';
 
 describe('applyMiddleware must be function', () => {
