@@ -4,7 +4,7 @@ import { Reducer, State } from './types';
 export type Enhancer = (store: Store) => Store;
 
 export function createStore(
-  reducer: Reducer,
+  reducer: Reducer<State>,
   preloadedState?: State,
   middlewares?: Enhancer[]
 ): Store {

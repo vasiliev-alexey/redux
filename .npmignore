@@ -13,3 +13,7 @@ tsconfig.json
 
 babel.config.js
 prettier.config.js
+
+/dist/*.test.js*
+/dist/*.test.d.ts
+/dist/*.js.map
