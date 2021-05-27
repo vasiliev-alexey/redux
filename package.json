@@ -1,6 +1,6 @@
 {
   "name": "@vasiliev-alexey/otus_redux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "/dist/index.js",
   "private": true,
   "homepage": "https://vasiliev-alexey.github.io/",
