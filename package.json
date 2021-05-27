@@ -1,8 +1,7 @@
 {
-  "name": "@vasiliev-alexey/otus_redux",
+  "name": "@vasiliev-alexey/otus_redux_sample",
   "version": "1.0.1",
   "main": "/dist/index.js",
-  "private": true,
   "homepage": "https://vasiliev-alexey.github.io/",
   "scripts": {
     "test": "jest --coverage",
