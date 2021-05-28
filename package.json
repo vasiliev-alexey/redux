@@ -5,6 +5,7 @@
   "homepage": "https://vasiliev-alexey.github.io/",
   "scripts": {
     "test": "jest --coverage",
+    "publish": "npm publish --access public",
     "build": "tsc -b",
     "lint": "prettier --check . && eslint ./src --ext .js,.ts && tsc --noEmit",
     "lint:fix": "prettier --write . && eslint . --fix --ext .js,.ts && tsc --noEmit",
