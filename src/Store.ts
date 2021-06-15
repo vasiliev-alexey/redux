@@ -32,7 +32,6 @@ export class Store {
   getState(): State {
     return this.state;
   }
-
   /**
    *
    * @param listener  - оповещаем подписчиков об измнении
